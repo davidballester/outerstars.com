@@ -34,7 +34,7 @@ const SecondaryPageHeader = ({ title }) => {
     <h3
       style={{
         fontFamily: styles.headerFontFamily,
-        marginTop: 0,
+        marginTop: rhythm(0.5),
         textAlign: "center",
         fontWeight: "normal",
       }}
