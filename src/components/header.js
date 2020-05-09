@@ -10,6 +10,7 @@ const MainPageHeader = ({ title }) => {
         ...scale(1.5),
         marginBottom: rhythm(1.5),
         marginTop: 0,
+        textAlign: "center",
       }}
     >
       <Link
@@ -29,8 +30,9 @@ const SecondaryPageHeader = ({ title }) => {
   return (
     <h3
       style={{
-        fontFamily: `Montserrat, sans-serif`,
+        fontFamily: `sans-serif`,
         marginTop: 0,
+        textAlign: "center",
       }}
     >
       <Link
