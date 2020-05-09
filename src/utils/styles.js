@@ -8,6 +8,7 @@ export const maxMainWidth = rhythm(24)
 const rawCommonStyles = {
   a: {
     textDecoration: "none",
+    boxShadow: "none",
   },
   "a, a:visited": {
     color: "#ffc107",
