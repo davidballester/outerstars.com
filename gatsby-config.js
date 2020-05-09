@@ -3,7 +3,8 @@ module.exports = {
     title: `Outer Stars`,
     author: {
       name: `David Ballester`,
-      summary: `Long time amateur writer and professional coder.`,
+      summary: `a long time amateur writer and professional coder.`,
+      profilePicture: `https://s.gravatar.com/avatar/9521b4c3248d221b3484f966e5ce497f?s=80`,
     },
     description: `A short horror finction ever-growing collection.`,
     siteUrl: `https://outerstars.com`,
