@@ -1,6 +1,7 @@
 import React from "react"
 
 import Header from "./header"
+import Footer from "./footer"
 import { rhythm } from "../utils/typography"
 import * as styles from "../utils/styles"
 
@@ -29,11 +30,7 @@ const Layout = ({ location, title, children }) => {
       >
         {children}
       </main>
-      <footer>
-        © {new Date().getFullYear()}, Built with
-        {` `}
-        <a href="https://www.gatsbyjs.org">Gatsby</a>
-      </footer>
+      <Footer />
     </div>
   )
 }
