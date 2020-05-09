@@ -1,5 +1,5 @@
 // custom typefaces
-import "typeface-merriweather"
+import "typeface-lora"
 import "typeface-prompt"
 
 import "prismjs/themes/prism.css"

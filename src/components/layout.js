@@ -12,6 +12,7 @@ const containerStyles = css({
   flexDirection: `column`,
   backgroundColor: styles.background,
   color: styles.textColor,
+  fontFamily: "Lora, serif",
   ...styles.commonStyles,
 })
 
