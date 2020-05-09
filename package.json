@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-blog",
+  "name": "outerstars.com",
   "private": true,
-  "description": "A starter for a blog powered by Gatsby and Markdown",
+  "description": "A short horror fiction collection",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "David Ballester <david.ballester.mena@gmail.com>",
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
   },
@@ -38,7 +38,7 @@
   "devDependencies": {
     "prettier": "2.0.5"
   },
-  "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
+  "homepage": "https://github.com/davidballester/outerstars.com",
   "keywords": [
     "gatsby"
   ],
@@ -46,7 +46,7 @@
   "main": "n/a",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
+    "url": "git+https://github.com/davidballester/outerstars.com"
   },
   "scripts": {
     "build": "gatsby build",
@@ -54,7 +54,6 @@
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "clean": "gatsby clean"
   }
 }
