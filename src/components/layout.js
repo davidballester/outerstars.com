@@ -14,6 +14,7 @@ const Layout = ({ location, title, children }) => {
         flexDirection: `column`,
         backgroundColor: styles.background,
         color: styles.textColor,
+        ...styles.commonStyles,
       }}
     >
       <header>
@@ -24,7 +25,7 @@ const Layout = ({ location, title, children }) => {
           flexGrow: 1,
           marginLeft: `auto`,
           marginRight: `auto`,
-          maxWidth: rhythm(24),
+          maxWidth: styles.maxMainWidth,
           padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
         }}
       >
