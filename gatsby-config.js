@@ -1,14 +1,14 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `Outer Stars`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `David Ballester`,
+      summary: `Long time amateur writer and professional coder.`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
+    description: `A short horror finction ever-growing collection.`,
+    siteUrl: `https://outerstars.com`,
     social: {
-      twitter: `kylemathews`,
+      reddit: `u/dballester`,
     },
   },
   plugins: [
@@ -60,8 +60,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `Outer Stars`,
+        short_name: `outerstars`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#663399`,
