@@ -2,6 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 
 import { rhythm, scale } from "../utils/typography"
+import * as styles from "../utils/styles"
 
 const MainPageHeader = ({ title }) => {
   return (
@@ -9,8 +10,10 @@ const MainPageHeader = ({ title }) => {
       style={{
         ...scale(1.5),
         marginBottom: rhythm(1.5),
-        marginTop: 0,
+        marginTop: rhythm(0.5),
         textAlign: "center",
+        fontFamily: styles.headerFontFamily,
+        fontWeight: "normal",
       }}
     >
       <Link
@@ -30,9 +33,10 @@ const SecondaryPageHeader = ({ title }) => {
   return (
     <h3
       style={{
-        fontFamily: `sans-serif`,
+        fontFamily: styles.headerFontFamily,
         marginTop: 0,
         textAlign: "center",
+        fontWeight: "normal",
       }}
     >
       <Link
