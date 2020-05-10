@@ -1,11 +1,18 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+import { css } from "glamor"
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
 import { getRootPath } from "../utils/location"
+
+const postStyle = css({
+  "& > p": {
+    fontSize: "1.3rem",
+  },
+})
 
 const Image = ({ src, alt }) => <img src={src} alt={alt} />
 
@@ -44,7 +51,10 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           </p>
           {image && <Image src={image} alt={post.frontmatter.title} />}
         </header>
-        <section dangerouslySetInnerHTML={{ __html: post.html }} />
+        <section
+          {...postStyle}
+          dangerouslySetInnerHTML={{ __html: post.html }}
+        />
         <hr
           style={{
             marginBottom: rhythm(1),
