@@ -7,14 +7,13 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
 import { getRootPath } from "../utils/location"
+import PostImage from "../components/postImage"
 
 const postStyle = css({
   "& > p": {
     fontSize: "1.3rem",
   },
 })
-
-const Image = ({ src, alt }) => <img src={src} alt={alt} />
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark
@@ -49,7 +48,14 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           >
             {post.frontmatter.date}
           </p>
-          {image && <Image src={image} alt={post.frontmatter.title} />}
+          <PostImage
+            src={image}
+            alt={post.frontmatter.title}
+            authorName={post.frontmatter.imageAuthorName}
+            authorLink={post.frontmatter.imageAuthorLink}
+            imageSourceName={post.frontmatter.imageSourceName}
+            imageSourceLink={post.frontmatter.imageSourceLink}
+          />
         </header>
         <section
           {...postStyle}
@@ -116,6 +122,10 @@ export const pageQuery = graphql`
         image {
           publicURL
         }
+        imageAuthorName
+        imageAuthorLink
+        imageSourceName
+        imageSourceLink
       }
     }
   }
