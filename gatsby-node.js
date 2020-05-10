@@ -35,18 +35,27 @@ exports.createPages = async ({ graphql, actions }) => {
   // Create blog posts pages.
   const posts = result.data.allMarkdownRemark.edges
 
-  posts.forEach((post, index) => {
-    const previous = index === posts.length - 1 ? null : posts[index + 1].node
-    const next = index === 0 ? null : posts[index - 1].node
+  const languages = new Set(posts.map(post => post.node.frontmatter.language))
+  const postsPerLanguage = [...languages].map(language =>
+    posts.filter(post => post.node.frontmatter.language === language)
+  )
+  postsPerLanguage.forEach(postsInSameLanguage => {
+    postsInSameLanguage.forEach((post, index) => {
+      const previous =
+        index === postsInSameLanguage.length - 1
+          ? null
+          : postsInSameLanguage[index + 1].node
+      const next = index === 0 ? null : postsInSameLanguage[index - 1].node
 
-    createPage({
-      path: post.node.fields.slug,
-      component: blogPost,
-      context: {
-        slug: post.node.fields.slug,
-        previous,
-        next,
-      },
+      createPage({
+        path: post.node.fields.slug,
+        component: blogPost,
+        context: {
+          slug: post.node.fields.slug,
+          previous,
+          next,
+        },
+      })
     })
   })
 }
