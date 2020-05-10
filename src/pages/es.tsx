@@ -44,7 +44,7 @@ export const pageQuery = graphql`
       }
     }
     allMarkdownRemark(
-      filter: { fields: {}, frontmatter: { language: { eq: "en" } } }
+      filter: { fields: {}, frontmatter: { language: { eq: "es" } } }
       sort: { fields: [frontmatter___date], order: DESC }
     ) {
       edges {
