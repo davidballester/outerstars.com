@@ -7,11 +7,16 @@ import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
 import { getRootPath } from "../utils/location"
 
+const Image = ({ src, alt }) => <img src={src} alt={alt} />
+
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark
   const siteTitle = data.site.siteMetadata.title
   const { previous, next } = pageContext
   const rootPath = getRootPath(post.frontmatter.language)
+  const image = post.frontmatter.image
+    ? post.frontmatter.image.publicURL
+    : undefined
   return (
     <Layout location={location} title={siteTitle} linkToRoot={rootPath}>
       <SEO
@@ -37,6 +42,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           >
             {post.frontmatter.date}
           </p>
+          {image && <Image src={image} alt={post.frontmatter.title} />}
         </header>
         <section dangerouslySetInnerHTML={{ __html: post.html }} />
         <hr
@@ -97,6 +103,9 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         description
         language
+        image {
+          publicURL
+        }
       }
     }
   }
