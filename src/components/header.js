@@ -3,6 +3,7 @@ import { Link } from "gatsby"
 
 import { rhythm, scale } from "../utils/typography"
 import * as styles from "../utils/styles"
+import { isRootPath } from "../utils/location"
 
 const MainPageHeader = ({ title }) => {
   return (
@@ -53,9 +54,9 @@ const SecondaryPageHeader = ({ title }) => {
 }
 
 const Header = ({ location, title }) => {
-  const rootPath = `${__PATH_PREFIX__}/`
-  const DisplayHeader =
-    location.pathname === rootPath ? MainPageHeader : SecondaryPageHeader
+  const DisplayHeader = isRootPath(location)
+    ? MainPageHeader
+    : SecondaryPageHeader
   return (
     <header>
       <DisplayHeader title={title} />
