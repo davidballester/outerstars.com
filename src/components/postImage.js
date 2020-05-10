@@ -1,5 +1,4 @@
 import React from "react"
-import { text } from "@fortawesome/fontawesome-svg-core"
 
 const PostImage = ({
   src,
@@ -16,9 +15,10 @@ const PostImage = ({
         alt={alt}
         style={{
           marginBottom: 0,
+          filter: "grayscale(100%)",
         }}
       />
-      <figcatpion
+      <figcaption
         style={{
           display: "block",
           width: "100%",
@@ -28,7 +28,7 @@ const PostImage = ({
       >
         Image by <a href={authorLink}>{authorName}</a> on{" "}
         <a href={imageSourceLink}>{imageSourceName}</a>.
-      </figcatpion>
+      </figcaption>
     </figure>
   )
 }
