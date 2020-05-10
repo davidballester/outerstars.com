@@ -4,33 +4,29 @@ import { Link } from "gatsby"
 import { rhythm, scale } from "../utils/typography"
 import * as styles from "../utils/styles"
 import { isRootPath } from "../utils/location"
+import LanguageSelector from "./languageSelector"
 
 const MainPageHeader = ({ title }) => {
   return (
-    <h1
-      style={{
-        ...scale(1.5),
-        marginBottom: rhythm(1.5),
-        marginTop: rhythm(0.5),
-        textAlign: "center",
-        fontFamily: styles.headerFontFamily,
-        fontWeight: "normal",
-      }}
-    >
-      <Link
+    <>
+      <h1
         style={{
-          boxShadow: `none`,
-          color: `inherit`,
+          ...scale(1.5),
+          marginBottom: rhythm(1.5),
+          marginTop: rhythm(0.5),
+          textAlign: "center",
+          fontFamily: styles.headerFontFamily,
+          fontWeight: "normal",
         }}
-        to={`/`}
       >
         {title}
-      </Link>
-    </h1>
+      </h1>
+      <LanguageSelector />
+    </>
   )
 }
 
-const SecondaryPageHeader = ({ title }) => {
+const SecondaryPageHeader = ({ title, to }) => {
   return (
     <h3
       style={{
@@ -45,7 +41,7 @@ const SecondaryPageHeader = ({ title }) => {
           boxShadow: `none`,
           color: `inherit`,
         }}
-        to={`/`}
+        to={to}
       >
         {title}
       </Link>
@@ -53,13 +49,13 @@ const SecondaryPageHeader = ({ title }) => {
   )
 }
 
-const Header = ({ location, title }) => {
+const Header = ({ location, title, linkToRoot }) => {
   const DisplayHeader = isRootPath(location)
     ? MainPageHeader
     : SecondaryPageHeader
   return (
     <header>
-      <DisplayHeader title={title} />
+      <DisplayHeader title={title} to={linkToRoot} />
     </header>
   )
 }

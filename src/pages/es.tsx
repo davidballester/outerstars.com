@@ -31,7 +31,14 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
   const siteTitle = data.site.siteMetadata.title
   const posts = data.allMarkdownRemark.edges
 
-  return <PostList siteTitle={siteTitle} posts={posts} location={location} />
+  return (
+    <PostList
+      siteTitle={siteTitle}
+      posts={posts}
+      location={location}
+      linkToRoot={"/es"}
+    />
+  )
 }
 
 export default BlogIndex

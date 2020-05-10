@@ -16,11 +16,11 @@ const containerStyles = css({
   ...styles.commonStyles,
 })
 
-const Layout = ({ location, title, children }) => {
+const Layout = ({ location, title, linkToRoot, children }) => {
   return (
     <div {...containerStyles}>
       <header>
-        <Header location={location} title={title} />
+        <Header location={location} title={title} linkToRoot={linkToRoot} />
       </header>
       <main
         style={{

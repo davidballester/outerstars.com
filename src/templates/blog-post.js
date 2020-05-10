@@ -5,14 +5,15 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
+import { getRootPath } from "../utils/location"
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark
   const siteTitle = data.site.siteMetadata.title
   const { previous, next } = pageContext
-
+  const rootPath = getRootPath(post.frontmatter.language)
   return (
-    <Layout location={location} title={siteTitle}>
+    <Layout location={location} title={siteTitle} linkToRoot={rootPath}>
       <SEO
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
@@ -95,6 +96,7 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        language
       }
     }
   }
